@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema Online Booking System</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1>GAB<span>CINEMA</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#movies">Movies</a></li>
+                    <li><a href="#Theatres">Theaters</a></li>
+                    <li><a href="#">My Bookings</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <button class="btn btn-login"><a href="login.html">Login</a></button>
+                <button class="btn btn-signup"><a href="signupcin.html">Sign Up</a></button>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero">
+                <h2>Book Your online Tickets </h2>
+                <p>Quick, easy, and convenient way to book movie tickets</p>
+            </section>
+
+            <section class="movie-selection">
+                <h2>Now Showing</h2>
+                <div class="movie-container">
+                    <div class="movie-card" data-movie-id="1">
+                        <img src="OIP (1).jfif" alt="Movie 1">
+                        <div class="movie-info">
+                            <h3>The Adventure</h3>
+                            <p class="genre">Action, Adventure</p>
+                            <p class="duration">2h 30min</p>
+                            <div class="rating">
+                                <span>★★★★☆</span>
+                            </div>
+                            <button class="btn btn-book">Book Now</button>
+                        </div>
+                    </div>
+                    <div class="movie-card" data-movie-id="2">
+                        <img src="OIP (2).jfif" alt="Movie 2">
+                        <div class="movie-info">
+                            <h3>The Mystery</h3>
+                            <p class="genre">Mystery, Thriller</p>
+                            <p class="duration">2h 15min</p>
+                            <div class="rating">
+                                <span>★★★★★</span>
+                            </div>
+                            <button class="btn btn-book">Book Now</button>
+                        </div>
+                    </div>
+                    <div class="movie-card" data-movie-id="3">
+                        <img src="third_files/ggoog.jpg" alt="Movie 3">
+                        <div class="movie-info">
+                            <h3>Comedy Night</h3>
+                            <p class="genre">Comedy</p>
+                            <p class="duration">1h 45min</p>
+                            <div class="rating">
+                                <span>★★★☆☆</span>
+                            </div>
+                            <button class="btn btn-book">Book Now</button>
+                        </div>
+                    </div>
+                    <div class="movie-card" data-movie-id="4">
+                        <img src="roma.webp" alt="Movie 4">
+                        <div class="movie-info">
+                            <h3>Romantic Journey</h3>
+                            <p class="genre">Romance, Drama</p>
+                            <p class="duration">2h 10min</p>
+                            <div class="rating">
+                                <span>★★★★☆</span>
+                            </div>
+                            <button class="btn btn-book">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="movie-selection">
+                <h2>UP COMING MOVIES:THE HEROES</h2>
+                <div class="movie-container">
+                    <div class="movie-card" data-movie-id="1">
+                        <img src="movie1.jpg" alt="Movie 1">
+                        <div class="movie-info">
+                            <h3>The Adventure Heroes</h3>
+                            <p class="genre">Action, Adventure</p>
+                            <p class="duration">2h 30min</p>
+                            <div class="rating">
+                                <span>★★★★☆</span>
+                            </div>
+                            <button class="btn btn-book">Book Now</button>
+                        </div>
+                    </div>
+                    <div class="movie-card" data-movie-id="2">
+                        <img src="movie2.jpg" alt="Movie 2">
+                        <div class="movie-info">
+                            <h3>The cartoon for kids</h3>
+                            <p class="genre">cartoons, Anime</p>
+                            <p class="duration">2h 15min</p>
+                            <div class="rating">
+                                <span>★★★★★</span>
+                            </div>
+                            <button class="btn btn-book">Book Now</button>
+                        </div>
+                    </div>
+                    <div class="movie-card" data-movie-id="3">
+                        <img src="movie3.jpg" alt="Movie 3">
+                        <div class="movie-info">
+                            <h3>Karate Kid 2</h3>
+                            <p class="genre">Comedy</p>
+                            <p class="duration">1h 45min</p>
+                            <div class="rating">
+                                <span>★★★☆☆</span>
+                            </div>
+                            <button class="btn btn-book">Book Now</button>
+                        </div>
+                    </div>
+                    <div class="movie-card" data-movie-id="4">
+                        <img src="movie4.jpg" alt="Movie 4">
+                        <div class="movie-info">
+                            <h3>Apocalypto 2</h3>
+                            <p class="genre">Heroes, Thriller</p>
+                            <p class="duration">2h 10min</p>
+                            <div class="rating">
+                                <span>★★★★☆</span>
+                            </div>
+                            <button class="btn btn-book">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="booking-form" id="bookingForm">
+                <h2>Book Your Tickets</h2>
+                <form id="cinemaBookingForm">
+                    <div class="form-group">
+                        <label for="movieSelect">Selected Movie:</label>
+                        <input type="text" id="movieSelect" name="movie" readonly>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="theaterSelect">Select Theater:</label>
+                        <select id="theaterSelect" name="theater" required>
+                            <option value="">Choose Theater</option>
+                            <option value="theater1">CineScreen Downtown</option>
+                            <option value="theater2">CineScreen Mall</option>
+                            <option value="theater3">CineScreen Uptown</option>
+                    </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dateSelect">Select Date:</label>
+                        <input type="date" id="dateSelect" name="date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="timeSelect">Select Time:</label>
+                        <select id="timeSelect" name="time" required>
+                            <option value="">Choose Time</option>
+                            <option value="10:00">10:00 AM</option>
+                            <option value="13:00">1:00 PM</option>
+                            <option value="16:00">4:00 PM</option>
+                            <option value="19:00">7:00 PM</option>
+                            <option value="22:00">10:00 PM</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Select Number of Tickets:</label>
+                        <div class="ticket-counter">
+                            <div class="ticket-type">
+                                <span>Adult ($12.00)</span>
+                                <div class="counter">
+                                    <button type="button" class="counter-btn decrease">-</button>
+                                    <input type="number" name="adultTickets" value="0" min="0" max="10" readonly>
+                                    <button type="button" class="counter-btn increase">+</button>
+                                </div>
+                            </div>
+                            <div class="ticket-type">
+                                <span>Child ($8.00)</span>
+                                <div class="counter">
+                                    <button type="button" class="counter-btn decrease">-</button>
+                                    <input type="number" name="childTickets" value="0" min="0" max="10" readonly>
+                                    <button type="button" class="counter-btn increase">+</button>
+                                </div>
+                            </div>
+                            <div class="ticket-type">
+                                <span>Senior ($10.00)</span>
+                                <div class="counter">
+                                    <button type="button" class="counter-btn decrease">-</button>
+                                    <input type="number" name="seniorTickets" value="0" min="0" max="10" readonly>
+                                    <button type="button" class="counter-btn increase">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="seat-selection">
+                        <h3>Select Your Seats</h3>
+                        <div class="screen">SCREEN</div>
+                        <div class="seating-plan">
+                            <!-- Seats will be generated dynamically by JavaScript -->
+                        </div>
+                        <div class="seat-legend">
+                            <div class="legend-item">
+                                <div class="seat available"></div>
+                                <span>Available</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="seat selected"></div>
+                                <span>Selected</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="seat occupied"></div>
+                                <span>Occupied</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="booking-summary">
+                        <h3>Booking Summary</h3>
+                        <div class="summary-details">
+                            <div class="summary-row">
+                                <span>Movie:</span>
+                                <span id="summaryMovie">--</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Theater:</span>
+                                <span id="summaryTheater">--</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Date:</span>
+                                <span id="summaryDate">--</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Time:</span>
+                                <span id="summaryTime">--</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Seats:</span>
+                                <span id="summarySeats">--</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Adult Tickets:</span>
+                                <span id="summaryAdult">0 × $12.00</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Child Tickets:</span>
+                                <span id="summaryChild">0 × $8.00</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Senior Tickets:</span>
+                                <span id="summarySenior">0 × $10.00</span>
+                            </div>
+                            <div class="summary-row total">
+                                <span>Total:</span>
+                                <span id="summaryTotal">$0.00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="customerName">Full Name:</label>
+                        <input type="text" id="customerName" name="customerName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="customerEmail">Email:</label>
+                        <input type="email" id="customerEmail" name="customerEmail" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="customerPhone">Phone:</label>
+                        <input type="tel" id="customerPhone" name="customerPhone" required>
+                    </div>
+
+                    <div class="form-group payment-method">
+                        <label>Payment Method:</label>
+                        <div class="payment-options">
+                            <div class="payment-option">
+                                <input type="radio" id="creditCard" name="paymentMethod" value="creditCard" checked>
+                                <label for="creditCard">Credit Card</label>
+                            </div>
+                            <div class="payment-option">
+                                <input type="radio" id="debit" name="paymentMethod" value="debit">
+                                <label for="debit">Debit Card</label>
+                            </div>
+                            <div class="payment-option">
+                                <input type="radio" id="paypal" name="paymentMethod" value="paypal">
+                                <label for="paypal">PayPal</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group card-details" id="cardDetails">
+                        <div class="card-row">
+                            <div class="form-group">
+                                <label for="cardNumber">Card Number:</label>
+                                <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456">
+                            </div>
+                        </div>
+                        <div class="card-row">
+                            <div class="form-group">
+                                <label for="cardExpiry">Expiration Date:</label>
+                                <input type="text" id="cardExpiry" name="cardExpiry" placeholder="MM/YY">
+                            </div>
+                            <div class="form-group">
+                                <label for="cardCVV">CVV:</label>
+                                <input type="text" id="cardCVV" name="cardCVV" placeholder="123">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="cardName">Name on Card:</label>
+                            <input type="text" id="cardName" name="cardName">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="checkbox" id="termsAgreement" name="termsAgreement" required>
+                        <label for="termsAgreement">I agree to the <a href="#">Terms and Conditions</a></label>
+                    </div>
+
+                    <div class="button-group">
+                        <button type="button" class="btn btn-secondary" id="resetBtn">Reset</button>
+                        <button type="submit" class="btn btn-primary" id="confirmBtn">Confirm Booking</button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="booking-confirmation" id="bookingConfirmation">
+                <div class="confirmation-content">
+                    <h2>Booking Confirmed!</h2>
+                    <div class="confirmation-icon">✓</div>
+                    <p>Thank you for your booking. A confirmation has been sent to your email.</p>
+                    <div class="booking-details">
+                        <h3>Booking Details</h3>
+                        <div class="details-row">
+                            <span>Booking ID:</span>
+                            <span id="confirmationId">BOK12345678</span>
+                        </div>
+                        <div class="details-row">
+                            <span>Movie:</span>
+                            <span id="confirmationMovie">--</span>
+                        </div>
+                        <div class="details-row">
+                            <span>Theater:</span>
+                            <span id="confirmationTheater">--</span>
+                        </div>
+                        <div class="details-row">
+                            <span>Date & Time:</span>
+                            <span id="confirmationDateTime">--</span>
+                        </div>
+                        <div class="details-row">
+                            <span>Seats:</span>
+                            <span id="confirmationSeats">--</span>
+                        </div>
+                        <div class="details-row">
+                            <span>Total Amount:</span>
+                            <span id="confirmationTotal">--</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" id="newBookingBtn">Make Another Booking</button>
+                </div>
+            </section>
+        </main>
+
+        <section class="features">
+            <h2>Why Book With Us?</h2>
+            <div class="feature-container">
+                <div class="feature">
+                    <div class="feature-icon">🎫</div>
+                    <h3>Easy Ticket Booking</h3>
+                    <p>Book your tickets in just a few clicks</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">💰</div>
+                    <h3>No Hidden Fees</h3>
+                    <p>Transparent pricing with no extra charges</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🍿</div>
+                    <h3>Food & Beverages</h3>
+                    <p>Pre-order snacks and beverages</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📱</div>
+                    <h3>Mobile Tickets</h3>
+                    <p>Get tickets delivered to your phone</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CineScreen</h3>
+                    <p>Your premier destination for movie tickets and entertainment.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Movies</a></li>
+                        <li><a href="#">Theaters</a></li>
+                        <li><a href="#">My Bookings</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><a 
+                        style="color: white;" href="mailto:amosun897@gmail.com">amosun897@gmail.com</a> </p>
+                    <p>Phone: +2349073153266</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon">Facebook</a>
+                        <a href="#" class="social-icon">Twitter</a>
+                        <a href="#" class="social-icon">Instagram</a>
+                        <a href="#" class="social-icon">YouTube</a>
+                    </div>
+                </div>k
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 online cinema booking ticket. All rights reserved. DESIGNED BY AMOSUN TOBA
+                    GABTOBX&copy;
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

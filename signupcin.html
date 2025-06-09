@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign up for my project cinema </title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        body{
+            background-color: black;
+        }
+        .signup-container{
+            color: white;
+            width: 800px;
+            height: 6%;
+            background-color: rgb(9, 9, 9);
+            border-radius: 25px;
+            justify-items: center;
+            justify-content: center;
+            margin: 50px auto;
+            margin-top: 10px;
+            flex-shrink: initial;
+            flex: -1;
+            box-shadow:5px 5px 10px yellow, 5px 10px 10px blue, 10px 10px 5px red, 5px 5px 5px pink ;
+        }
+        form{
+            margin-top:30px ;
+        }
+        h1{
+          font-size: 2;  
+            font-weight: 500px;
+        font-display: fallback;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-style: initial;
+        font-language-override: unset;
+        }
+        p a{
+            color: white;
+        }
+        p a:hover{
+            background-color: green;
+        }
+        button{
+            background-color: aliceblue;
+        }
+        button:hover{
+            background-color: blueviolet;
+        }
+        marquee{
+            background-color: white;
+            border-radius: 10px;
+        }
+        .inpu{
+            width: 300px;
+            height: 30px;
+            border: 2px solid black;
+            border-radius: 15px;
+            padding-left: 100px;
+            border-left:6px solid blue;
+            border-right: 6px solid red;
+            font-size: larger;
+        }
+        .inpu:hover{
+            background-color: aqua;
+            color: rgb(24, 24, 27);
+
+        }
+        
+        .country{
+            color: black;
+            float: right;
+        }
+
+    </style>
+</head>
+    <body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1>GAB<span>CINEMA</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#movies">Movies</a></li>
+                    <li><a href="#Theatres">Theaters</a></li>
+                    <li><a href="#">My Bookings</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <button class="btn btn-signup"><a href="login.html">LOGIN</a></button>
+            </div>
+        </header><br><br>
+        <main>
+            <marquee behavior="direction-left">login to watch unlimited movies</marquee>
+      <div class="signup-container">
+        <div class="sign-form">
+           <h1>Sign up form for online ticket </h1>
+            <form style="text-align: center;
+            margin: 0px;"><br><br>
+            <label>USERNAME:</label><br>
+            <input class="inpu" type="text" id="name" placeholder="username"  min="7" maxlength="12" required><br>
+            <label>FIRSTNAME:</label><br>
+            <input class="inpu" type="text" id="name" placeholder="firstname"  min="7" maxlength="12" required><br>
+            <label>LASTNAME:</label><br>
+            <input class="inpu" type="text" id="name" placeholder="lastname"  min="7" maxlength="12" required><br>
+            <label>MIDDLENAME:</label><br>
+            <input class="inpu" type="text" id="name" placeholder="middlename"  min="7" maxlength="12" required><br>
+            <label>PASSWORD:</label><br>
+            <input class="inpu" type="PASS" id="password" placeholder="password"  min="7" maxlength="12" required><br><br>
+            <label class="" for="gender">GENDER</label><br>
+            <input type="radio" id="name" name="MALE" name="FEMALE" >MALE 
+                        <input type="radio" id="name" name="MALE" name="FEMALE" >FEMALE<br><br>
+
+             <button class="btn btn-login"><a href="cinema.html">SIGN UP</a></button><br>
+             <p>already have accout?<a href="login.html">Sign In</a></p>
+            </form>
+        </div>
+
+      </div><br><br>
+      <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>CineScreen</h3>
+                <p>Your premier destination for movie tickets and entertainment.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Movies</a></li>
+                    <li><a href="#">Theaters</a></li>
+                    <li><a href="#">My Bookings</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: amosun897@gmail.com</p>
+                <p>Phone: +2349073153266</p>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="https//www.facebook.com/" class="social-icon">Facebook</a>
+                    <a href="#" class="social-icon">Twitter</a>
+                    <a href="#" class="social-icon">Instagram</a>
+                    <a href="https//www.youtube.com/" class="social-icon">YouTube</a>
+                </div>
+            </div>
+        </div><br><br>
+        <div class="copyright">
+            <br>
+            <p>&copy; 2025 online cinema booking ticket. All rights reserved. DESIGNED BY AMOSUN TOBA
+                GABTOBX&copy;
+            </p>
+        </div>
+    </footer>
+</div>
+
+<script src="script.js"></script>
+
+    </main>
+
+</body>
+</html>
